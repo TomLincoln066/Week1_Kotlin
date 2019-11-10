@@ -1,0 +1,48 @@
+1. Try the statements below in REPL. Please answer that there are correct or not and
+explain the reasons.
+
+
+a.var id = 9527 (0)
+
+b.var number : Int = 5.6 (x)
+
+the floating-point literal does not conform to the expected type Int
+
+c.var title = "Hello Kotlin!"(0)
+
+d.val content : String = null(x)
+
+ null can not be a value of a non-null type String
+
+e.val number : Double? = 556.6(0)
+
+f. var list: List<String>? = listOf (null, null) (x)
+
+type inference failed. Expected type mismatch: inferred type is List<Nothing?> but List<String>? was expected
+
+
+g. var list: List<String?>? = listOf ("Wayne", "Chen") (0)
+
+h. list.size(x)
+
+
+only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type List<String?>?
+
+
+i. list?.size(0)
+
+
+
+
+2. Read the code below, choose the correct answer and explain the reason.
+
+
+What will the code print?
+
+c."Your grace." (words' length is 39) 
+
+
+3. Read the code below, choose the correct answer and explain the reason.
+
+d. val array = Array(6) { 1000.0.pow( it ) }
+
