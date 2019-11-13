@@ -2,26 +2,28 @@ open class Human(var name : String){
 
      open fun attack(){
          print(name + " use Fist Attack!")
+     }
+     var humanMana = 100
 
-    }
+     fun hasManaOrNot(){
+         if ( humanMana > 0){
+             print( name + " has mana")
+         }else{
+             print( name + " doesn't have mana")
+             }
+     }
+
+
 }
 
-class Mage:Human(name = ""){
+class Mage:Human(name = "Tom"){
 
     override fun attack(){
-        print(name + "use Fireball!")
+        print(name + " use Fireball!")
     }
 
 }
 
-fun hasManaOrNot(){
-    val humanMana = 0
-    if ( humanMana > 0){
-        print( "has mana")
-    }else{
-        print( "doesn't have mana")
-    }
-}
 
 fun main() {
 
@@ -29,6 +31,7 @@ fun main() {
      val mage = Mage()
      human.attack()
      mage.attack()
-
+     var tom = Human("Tom")
+     tom.hasManaOrNot()
 }
 

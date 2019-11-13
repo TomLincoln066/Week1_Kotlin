@@ -4,33 +4,48 @@ explain the reasons.
 
 a.var id = 9527 (0)
 
+原因: var 可被assing 數值(Byte、Short、Int、Long、Bool、Char、String)，可重複assign，和val不同。
+      
+
 b.var number : Int = 5.6 (x)
 
 the floating-point literal does not conform to the expected type Int
+原因: type Int 是整數，不應該有小數點。
 
 c.var title = "Hello Kotlin!"(0)
+
+原因: var 可被assing 數值(Byte、Short、Int、Long、Bool、Char、String)，可重複assign，和val不同。
 
 d.val content : String = null(x)
 
  null can not be a value of a non-null type String
+原因: type String 是字串， null不是字串。
 
 e.val number : Double? = 556.6(0)
+
+原因: type Double 接受精度浮點數變數， 556.6符合要求。
 
 f. var list: List<String>? = listOf (null, null) (x)
 
 type inference failed. Expected type mismatch: inferred type is List<Nothing?> but List<String>? was expected
 
+原因: List type 是 string, 但是 string 的型態不包含 null，所以不符合。
 
 g. var list: List<String?>? = listOf ("Wayne", "Chen") (0)
 
+
+原因: List type 是 string,"Wayne", "Chen"皆為string，所以符合。
+
+
 h. list.size(x)
 
+原因:因為list size必須為 null-safe (?)才可以接受null value。
 
 only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type List<String?>?
 
-
 i. list?.size(0)
 
+原因:因為list size為 null-safe (?)，故可以接受null value。
 
 
 
@@ -39,10 +54,19 @@ i. list?.size(0)
 
 What will the code print?
 
-c."Your grace." (words' length is 39) 
+c."Your grace." 
+
+原因:字串數 words' length is 39，所以output是 Your grace。 
 
 
 3. Read the code below, choose the correct answer and explain the reason.
 
+
 d. val array = Array(6) { 1000.0.pow( it ) }
+
+原因: 
+1.因為output總共有六個項目，加上output有以1000為底數的指數規律，所以考慮選擇 C 或 D。
+2.power是指數的英文，而it是指each single parameter。 套入程式中計算算出指數0~5，得到
+  1,1000,1000000,1000000000,1000000000000,1000000000000000的結果。       
+      
 
